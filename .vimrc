@@ -31,7 +31,7 @@ set incsearch   " incremental searching
 set ignorecase  " search is case insensitive...
 set smartcase   " ... unless it has uppercase at least one capital letter
 " Stop the highlighting by hitting return
-nnoremap <CR> :noh<CR><CR>
+nnoremap <CR> :noh<CR>
 " }}}
 
 " UI " {{{
@@ -40,6 +40,10 @@ set showmatch       " Briefly jump to the matching bracket when a new one is ins
 set laststatus=2    " Always show status line
 set scrolloff=4     " Keep cursor 4 lines the top and bottom when scrolling
 set wildmenu        " Show command completion
+
+set foldenable          " Turn on folding
+set foldmethod=marker   " Fold on the marker
+set foldlevel=42        " Don't autofold
 
 set mouseshape=n:arrow
 set mouseshape=v:arrow
@@ -68,6 +72,7 @@ map <Leader>r :call ToggleRelative()<CR>
 " Automatically open and close the popup menu / preview window
 autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menu,longest ",menuone - menu appears even if there's only one match
+set pumheight=16
 " }}}
 
 " }}}
@@ -89,9 +94,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
-Plugin 'ervandew/supertab'
-Plugin 'msanders/snipmate.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -110,15 +115,6 @@ filetype plugin indent on    " required
 
 " }}}
 
-
-" Supertab
-"let g:SuperTabDefaultCompletionType = 'context'
-"let g:SuperTabContextDefaultCompletionType = '<c-n>'
-
-" You Complete Me
-"let g:ycm_min_num_of_chars_for_completion = 1
-
-
 " NerdTree
 map <F2> :NERDTreeToggle <CR>
 let NERDTreeShowHidden=0
@@ -134,17 +130,22 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
-" TagList
-"map <F3> :NERDTreeClose <CR> :TlistToggle <CR>
-"let Tlist_Auto_Update = 1
-"let Tlist_Auto_Highlight_Tag = 1
-"let Tlist_Use_Horiz_Window = 0
-"let Tlist_Use_Right_Window = 0
+" YCM, UltiSnips and popmenu behaviour
+let g:ycm_min_num_of_chars_for_completion = 1
 
+let g:UltiSnipsExpandTrigger = "<nop>"
+let g:ulti_expand_or_jump_res = 0
 
-"MiniBufExplorer
-"let g:miniBufExplMinHeight=1
-"let g:miniBufExplorerMoreThanOne=0
+function SnippetOrCR()
+    let snippet = UltiSnips#ExpandSnippetOrJump()
+    if g:ulti_expand_or_jump_res > 0
+        return snippet
+    else
+        return "\<C-y>"
+    endif
+endfunction
+
+inoremap <expr> <CR> pumvisible() ? "<C-R>=SnippetOrCR()<CR>" : "\<CR>"
 
 " }}}
 
@@ -167,7 +168,7 @@ function! ToggleHJKLMode ()
       inoremap <left> <nop>
       inoremap <right> <nop>
    else
-      echo 'Training wheels are off (hjkl mode on)'
+      echo 'Training wheels are on (hjkl mode off)'
       nnoremap <up> <up>
       nnoremap <down> <down>
       nnoremap <left> <left>
