@@ -17,7 +17,9 @@ set tabstop=4 softtabstop=4 shiftwidth=4    " set indent to 4
 set autoindent
 set nowrap
 
+set formatoptions+=o    " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
 set formatoptions-=r    " Do not automatically insert a comment leader after an enter
+set formatoptions-=t    " Do no auto-wrap text using textwidth (does not apply to comments)
 
 filetype plugin indent on   " Detect filetypes
 
@@ -49,11 +51,7 @@ set mouseshape=n:arrow
 set mouseshape=v:arrow
 set mouseshape=i:beam
 
-if has('gui_running')
-    colorscheme desert
-else
-    colorscheme desert256
-endif
+colorscheme desert  " Backup color scheme
 
 set guioptions+=b
 set guioptions-=T
@@ -94,9 +92,14 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
+Plugin 'tpope/vim-fugitive'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
+Plugin 'bling/vim-airline'
+Plugin 'fholgado/minibufexpl.vim'
+Plugin 'flazz/vim-colorschemes'
+
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -115,6 +118,9 @@ filetype plugin indent on    " required
 
 " }}}
 
+" Color scheme
+colorscheme smyck
+
 " NerdTree
 map <F2> :NERDTreeToggle <CR>
 let NERDTreeShowHidden=0
@@ -130,13 +136,13 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 
-" YCM, UltiSnips and popmenu behaviour
+" YouCompleteMe, UltiSnips and popmenu behaviour
 let g:ycm_min_num_of_chars_for_completion = 1
 
 let g:UltiSnipsExpandTrigger = "<nop>"
 let g:ulti_expand_or_jump_res = 0
 
-function SnippetOrCR()
+function! SnippetOrCR()
     let snippet = UltiSnips#ExpandSnippetOrJump()
     if g:ulti_expand_or_jump_res > 0
         return snippet
@@ -146,6 +152,15 @@ function SnippetOrCR()
 endfunction
 
 inoremap <expr> <CR> pumvisible() ? "<C-R>=SnippetOrCR()<CR>" : "\<CR>"
+
+" Airline
+set noshowmode  " Airline will take care of it
+
+set guifont=Literation\ Mono\ Powerline     " Powerline fonts required
+let g:airline_powerline_fonts = 1
+
+" MiniBufExpl
+let g:miniBufExplBuffersNeeded = 1  " Show MiniBufExpl as soon as a normal buffer is available
 
 " }}}
 
