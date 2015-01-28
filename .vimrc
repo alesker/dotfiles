@@ -24,7 +24,12 @@ set formatoptions-=t    " Do no auto-wrap text using textwidth (does not apply t
 filetype plugin indent on   " Detect filetypes
 
 " Trailing whitespace removal
-autocmd BufWritePre * :%s/\s\+$//e
+function! RemoveTrailingWhitespaces()
+    let l:save_cursor = getpos(".")
+    silent! execute ':%s/\s\+$//e'
+    call setpos('.', l:save_cursor)
+endfunction
+autocmd BufWritePre * call RemoveTrailingWhitespaces()
 " }}}
 
 " Search " {{{
@@ -33,7 +38,7 @@ set incsearch   " incremental searching
 set ignorecase  " search is case insensitive...
 set smartcase   " ... unless it has uppercase at least one capital letter
 " Stop the highlighting by hitting return
-nnoremap <CR> :noh<CR>
+nnoremap <silent> <CR> :let @/ = ""<CR>
 " }}}
 
 " UI " {{{
@@ -42,6 +47,7 @@ set showmatch       " Briefly jump to the matching bracket when a new one is ins
 set laststatus=2    " Always show status line
 set scrolloff=4     " Keep cursor 4 lines the top and bottom when scrolling
 set wildmenu        " Show command completion
+set pumheight=16
 
 set foldenable          " Turn on folding
 set foldmethod=marker   " Fold on the marker
@@ -67,10 +73,6 @@ function! ToggleRelative()
 endfunction
 map <Leader>r :call ToggleRelative()<CR>
 
-" Automatically open and close the popup menu / preview window
-autocmd CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menu,longest ",menuone - menu appears even if there's only one match
-set pumheight=16
 " }}}
 
 " }}}
@@ -100,7 +102,6 @@ Plugin 'bling/vim-airline'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'flazz/vim-colorschemes'
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -123,7 +124,8 @@ colorscheme smyck
 
 " NerdTree
 map <F2> :NERDTreeToggle <CR>
-let NERDTreeShowHidden=0
+let NERDTreeShowHidden=1
+
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -135,14 +137,13 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-
 " YouCompleteMe, UltiSnips and popmenu behaviour
 let g:ycm_min_num_of_chars_for_completion = 1
 
 let g:UltiSnipsExpandTrigger = "<nop>"
 let g:ulti_expand_or_jump_res = 0
 
-function! SnippetOrCR()
+function! SnippetOrCompletion()
     let snippet = UltiSnips#ExpandSnippetOrJump()
     if g:ulti_expand_or_jump_res > 0
         return snippet
@@ -151,7 +152,7 @@ function! SnippetOrCR()
     endif
 endfunction
 
-inoremap <expr> <CR> pumvisible() ? "<C-R>=SnippetOrCR()<CR>" : "\<CR>"
+inoremap <expr> <CR> pumvisible() ? "<C-R>=SnippetOrCompletion()<CR>" : "\<CR>"
 
 " Airline
 set noshowmode  " Airline will take care of it
@@ -160,15 +161,15 @@ set guifont=Literation\ Mono\ Powerline     " Powerline fonts required
 let g:airline_powerline_fonts = 1
 
 " MiniBufExpl
-let g:miniBufExplBuffersNeeded = 1  " Show MiniBufExpl as soon as a normal buffer is available
+let g:miniBufExplBuffersNeeded = 0
 
 " }}}
 
 " hjkl mode " {{{
 function! ToggleHJKLMode ()
-   let w:true_mode = exists('w:hjkl_mode') ? !w:hjkl_mode : 1
+   let w:hjkl_mode = exists('w:hjkl_mode') ? !w:hjkl_mode : 1
 
-   if w:true_mode
+   if w:hjkl_mode
       echo 'Training wheels are off (hjkl mode on)'
       nnoremap <up> <nop>
       nnoremap <down> <nop>
