@@ -82,12 +82,17 @@ alias rm='rm -i'                    # 'rm -i' prompts for every file
 alias ln='ln -i'
 
 
-# Bash history completion
+# Bash navigation
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 
+bind '"\e\e[D": backward-word'
+bind '"\e\e[C": forward-word'
+
 
 # bash-completion
+set completion-ignore-case on
+set blink-matching-paren on
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi

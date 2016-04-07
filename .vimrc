@@ -50,7 +50,7 @@ set wildmenu        " Show command completion
 set pumheight=16
 
 set foldenable          " Turn on folding
-set foldmethod=marker   " Fold on the marker
+set foldmethod=syntax   " Fold on the marker
 set foldlevel=42        " Don't autofold
 
 set mouseshape=n:arrow
