@@ -1,5 +1,7 @@
 " General " {{{
 
+set shell=/bin/sh
+
 set nocompatible
 
 set hidden              " Current buffer can be put to background without writing to disk
@@ -64,6 +66,11 @@ set guioptions-=T
 
 set number
 
+if has("gui_running")
+    set macligatures
+    set guifont=Fira\ Code:h12
+endif
+
 function! ToggleRelative()
     if &relativenumber
         set norelativenumber
@@ -95,7 +102,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-fugitive'
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'bling/vim-airline'
