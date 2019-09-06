@@ -105,7 +105,8 @@ Plugin 'tpope/vim-fugitive'
 "Plugin 'Valloric/YouCompleteMe'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'bling/vim-airline'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fholgado/minibufexpl.vim'
 Plugin 'flazz/vim-colorschemes'
 
@@ -127,12 +128,17 @@ filetype plugin indent on    " required
 " }}}
 
 " Color scheme
-colorscheme smyck
+colorscheme gruvbox
 
-" NerdTree
-map <F2> :NERDTreeToggle <CR>
+" NerdTree and MiniBufExpl
+map - :call ToggleFileUI()<CR>
 let NERDTreeShowHidden=1
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+function! ToggleFileUI()
+    :MBEOpen
+    :NERDTreeToggle
+endfunction
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -166,9 +172,6 @@ set noshowmode  " Airline will take care of it
 
 set guifont=Literation\ Mono\ Powerline     " Powerline fonts required
 let g:airline_powerline_fonts = 1
-
-" MiniBufExpl
-let g:miniBufExplBuffersNeeded = 0
 
 " }}}
 
