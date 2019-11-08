@@ -66,11 +66,6 @@ set guioptions-=T
 
 set number
 
-if has("gui_running")
-    set macligatures
-    set guifont=Fira\ Code:h12
-endif
-
 function! ToggleRelative()
     if &relativenumber
         set norelativenumber
@@ -100,14 +95,8 @@ Plugin 'gmarik/Vundle.vim'
 
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
-"Plugin 'Valloric/YouCompleteMe'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'fholgado/minibufexpl.vim'
+Plugin 'itchyny/lightline.vim'
 Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
@@ -129,6 +118,7 @@ filetype plugin indent on    " required
 
 " Color scheme
 colorscheme gruvbox
+let g:gruvbox_contrast_dark='soft'
 
 " NerdTree and MiniBufExpl
 map - :call ToggleFileUI()<CR>
@@ -140,74 +130,57 @@ function! ToggleFileUI()
     :NERDTreeToggle
 endfunction
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" YouCompleteMe, UltiSnips and popmenu behaviour
-let g:ycm_min_num_of_chars_for_completion = 1
-
-let g:UltiSnipsExpandTrigger = "<nop>"
-let g:ulti_expand_or_jump_res = 0
-
-function! SnippetOrCompletion()
-    let snippet = UltiSnips#ExpandSnippetOrJump()
-    if g:ulti_expand_or_jump_res > 0
-        return snippet
-    else
-        return "\<C-y>"
-    endif
-endfunction
-
-inoremap <expr> <CR> pumvisible() ? "<C-R>=SnippetOrCompletion()<CR>" : "\<CR>"
-
-" Airline
-set noshowmode  " Airline will take care of it
-
-set guifont=Literation\ Mono\ Powerline     " Powerline fonts required
-let g:airline_powerline_fonts = 1
+" Lightline
+set noshowmode
 
 " }}}
 
 " hjkl mode " {{{
 function! ToggleHJKLMode ()
-   let w:hjkl_mode = exists('w:hjkl_mode') ? !w:hjkl_mode : 1
+    let w:hjkl_mode = exists('w:hjkl_mode') ? !w:hjkl_mode : 1
 
-   if w:hjkl_mode
-      echo 'Training wheels are off (hjkl mode on)'
-      nnoremap <up> <nop>
-      nnoremap <down> <nop>
-      nnoremap <left> <nop>
-      nnoremap <right> <nop>
-      vnoremap <up> <nop>
-      vnoremap <down> <nop>
-      vnoremap <left> <nop>
-      vnoremap <right> <nop>
-      inoremap <up> <nop>
-      inoremap <down> <nop>
-      inoremap <left> <nop>
-      inoremap <right> <nop>
-   else
-      echo 'Training wheels are on (hjkl mode off)'
-      nnoremap <up> <up>
-      nnoremap <down> <down>
-      nnoremap <left> <left>
-      nnoremap <right> <right>
-      vnoremap <up> <up>
-      vnoremap <down> <down>
-      vnoremap <left> <left>
-      vnoremap <right> <right>
-      inoremap <up> <up>
-      inoremap <down> <down>
-      inoremap <left> <left>
-      inoremap <right> <right>
-   endif
+    if w:hjkl_mode
+        echo 'Training wheels are off (hjkl mode on)'
+        nnoremap <up> <nop>
+        nnoremap <down> <nop>
+        nnoremap <left> <nop>
+        nnoremap <right> <nop>
+        vnoremap <up> <nop>
+        vnoremap <down> <nop>
+        vnoremap <left> <nop>
+        vnoremap <right> <nop>
+        inoremap <up> <nop>
+        inoremap <down> <nop>
+        inoremap <left> <nop>
+        inoremap <right> <nop>
+    else
+        echo 'Training wheels are on (hjkl mode off)'
+        nnoremap <up> <up>
+        nnoremap <down> <down>
+        nnoremap <left> <left>
+        nnoremap <right> <right>
+        vnoremap <up> <up>
+        vnoremap <down> <down>
+        vnoremap <left> <left>
+        vnoremap <right> <right>
+        inoremap <up> <up>
+        inoremap <down> <down>
+        inoremap <left> <left>
+        inoremap <right> <right>
+    endif
 endfunction
 map <Leader>tm :call ToggleHJKLMode()<CR>
 " }}}
+
+au BufNewFile,BufRead *Appfile set ft=ruby
+au BufNewFile,BufRead *Deliverfile set ft=ruby
+au BufNewFile,BufRead *Fastfile set ft=ruby
+au BufNewFile,BufRead *Gymfile set ft=ruby
+au BufNewFile,BufRead *Matchfile set ft=ruby
+au BufNewFile,BufRead *Snapfile set ft=ruby
+au BufNewFile,BufRead *Scanfile set ft=ruby
+au BufNewFile,BufRead *Podfile set ft=ruby
+au BufNewFile,BufRead *Dangerfile set ft=ruby
+au BufNewFile,BufRead *Jenkinsfile set ft=groovy
+
+
