@@ -17,7 +17,6 @@ set expandtab                               " use spaces instead of tabs
 set tabstop=4 softtabstop=4 shiftwidth=4    " set indent to 4
 
 set autoindent
-set nowrap
 
 set formatoptions+=o    " Automatically insert the current comment leader after hitting 'o' or 'O' in Normal mode.
 set formatoptions-=r    " Do not automatically insert a comment leader after an enter
@@ -47,9 +46,18 @@ nnoremap <silent> <CR> :let @/ = ""<CR>
 set showcmd         " Display incomplete commands
 set showmatch       " Briefly jump to the matching bracket when a new one is inserted
 set laststatus=2    " Always show status line
-set scrolloff=4     " Keep cursor 4 lines the top and bottom when scrolling
 set wildmenu        " Show command completion
+set wildmode=longest:full,full
 set pumheight=16
+
+
+
+" Scrolling and wrapping
+set nowrap
+set scrolloff=0
+set sidescroll=1
+set listchars=extends:>,precedes:<
+set sidescrolloff=1
 
 set foldenable          " Turn on folding
 set foldmethod=syntax   " Fold on the marker
@@ -81,44 +89,28 @@ map <Leader>r :call ToggleRelative()<CR>
 
 " Plugins " {{{
 
-" Vundle " {{{
-filetype off                  " required
+" Vim-Plug " {{{
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'fholgado/minibufexpl.vim', { 'on': 'MBEOpen' }
+Plug 'itchyny/lightline.vim'
+Plug 'mhinz/vim-startify'
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'fholgado/minibufexpl.vim'
-Plugin 'itchyny/lightline.vim'
-Plugin 'flazz/vim-colorschemes'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-endwise'
+Plug 'Raimondi/delimitMate'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+Plug 'morhetz/gruvbox'
+Plug 'rakr/vim-one'
+
+Plug 'dense-analysis/ale'
+"Plug 'flazz/vim-colorschemes'
+call plug#end()
 
 " }}}
 
-" Color scheme
-colorscheme gruvbox
-let g:gruvbox_contrast_dark='soft'
 
 " NerdTree and MiniBufExpl
 map - :call ToggleFileUI()<CR>
@@ -133,7 +125,72 @@ endfunction
 " Lightline
 set noshowmode
 
+" Startify
+let g:header = [
+            \ '             __                ',
+            \ '     .--.--.|__|.--------.     ',
+            \ '     |  |  ||  ||        |     ',
+            \ '      \___/ |__||__|__|__|     ',
+            \ '                               ',
+            \ 'Do. Or do not. There is no try.',
+            \ '                               ',
+            \]
+let g:footer = [
+            \ '                         ',
+            \ 'May the Force be with you'
+            \]
+let g:startify_custom_header = 'startify#center(g:header)'
+let g:startify_custom_footer = 'startify#center(g:footer)'
+let g:startify_padding_left = float2nr((winwidth('%') - 80) / 2)
+
+let g:startify_bookmarks = [
+            \ {'v': '~/.vimrc'},
+            \ {'z': '~/.zshrc'}
+            \]
+let g:startify_skiplist = [
+        \ '.*/.vimrc',
+        \ '.*/.zshrc',
+        \ 'COMMIT_EDITMSG',
+        \ 'plugged/.*/doc/.*\.txt',
+        \ ]
+let g:startify_files_number = 5
+
+" ALE
+let g:ale_linters = {
+      \   'ruby': ['rufo', 'ruby', 'solargraph'],
+      \}
+let g:ale_sign_error = '‼️'
+let g:ale_sign_warning = '⚠️'
+let g:ale_fixers = {
+      \    'ruby': ['rufo'],
+      \}
+let g:ale_fix_on_save = 1
 " }}}
+
+" Coloring
+
+function! CheckSystemInterfaceStyle(...)
+    let g:apple_interface_style=system("defaults read -g AppleInterfaceStyle")
+    if g:apple_interface_style ==? "Dark\n"
+        set bg=dark
+    else
+        set bg=light
+    endif
+endfunction
+
+if !has('gui_running')
+    colorscheme gruvbox
+    let g:gruvbox_contrast_dark='soft'
+else
+    let g:one_allow_italics = 1
+    colorscheme one
+    call CheckSystemInterfaceStyle()
+    call timer_start(3000, "CheckSystemInterfaceStyle", {"repeat": -1})
+endif
+
+let g:lightline = {
+            \ 'colorscheme': g:colors_name,
+            \ }
 
 " hjkl mode " {{{
 function! ToggleHJKLMode ()
@@ -182,5 +239,3 @@ au BufNewFile,BufRead *Scanfile set ft=ruby
 au BufNewFile,BufRead *Podfile set ft=ruby
 au BufNewFile,BufRead *Dangerfile set ft=ruby
 au BufNewFile,BufRead *Jenkinsfile set ft=groovy
-
-
