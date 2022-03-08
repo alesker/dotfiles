@@ -1,0 +1,16 @@
+# Development
+brew "ruby-install"
+brew "chruby"
+brew "git"
+brew "git-lfs"
+brew "git-standup"
+brew "nvm"
+
+cask "android-studio"
+cask "figma"
+cask "fork"
+cask "knuff"
+cask "paw"
+cask "proxyman"
+cask "vimr"
+cask "visual-studio-code"
