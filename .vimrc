@@ -90,6 +90,7 @@ map <Leader>r :call ToggleRelative()<CR>
 " Plugins " {{{
 
 " Vim-Plug " {{{
+" https://github.com/junegunn/vim-plug#installation
 
 call plug#begin('~/.vim/plugged')
 
