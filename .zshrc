@@ -1,6 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+if type brew &>/dev/null
+then
+    FPATH="$(brew --prefix)/share/zsh/site-functions:${FPATH}"
+
+    autoload -Uz compinit
+    compinit
+fi
+
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -73,10 +81,8 @@ plugins=(
     z
     colorize
     colored-man-pages
-    osx
+    macos
     themes
-    zsh-autosuggestions
-    fast-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -94,6 +100,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -112,14 +119,18 @@ bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
-source /usr/local/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $(brew --prefix)/share/chruby/chruby.sh
+source $(brew --prefix)/share/chruby/auto.sh
 
 # Aliases
 alias da='date "+%A, %B %d, %Y [%T]"'
 alias df='df -H'
 alias du='du -c -h'
 alias bc='bc -lqw'
+alias vim='nvim'
 
 function gif_from_video() {
     zparseopts -D -E -A Args -- -input:=input -output:=output -quality:=quality -fps:=fps
