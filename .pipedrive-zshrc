@@ -1,0 +1,14 @@
+function gif_from_video() {
+    zparseopts -D -E -A Args -- -input:=input -output:=output -quality:=quality -fps:=fps
+    palette=palette.png
+    ffmpeg -i "$Args[--input]" -vf palettegen $palette && ffmpeg -i "$Args[--input]" -i $palette -lavfi paletteuse=bayer_scale="$Args[--quality]":dither=bayer -r "$Args[--fps]" "$Args[--output]" && rm -rf $palette
+}
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools

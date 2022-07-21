@@ -119,12 +119,6 @@ bindkey "[C" forward-word
 bindkey "^[a" beginning-of-line
 bindkey "^[e" end-of-line
 
-source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-source $(brew --prefix)/share/chruby/chruby.sh
-source $(brew --prefix)/share/chruby/auto.sh
-
 # Aliases
 alias da='date "+%A, %B %d, %Y [%T]"'
 alias df='df -H'
@@ -132,8 +126,12 @@ alias du='du -c -h'
 alias bc='bc -lqw'
 alias vim='nvim'
 
-function gif_from_video() {
-    zparseopts -D -E -A Args -- -input:=input -output:=output -quality:=quality -fps:=fps
-    palette=palette.png
-    ffmpeg -i "$Args[--input]" -vf palettegen $palette && ffmpeg -i "$Args[--input]" -i $palette -lavfi paletteuse=bayer_scale="$Args[--quality]":dither=bayer -r "$Args[--fps]" "$Args[--output]" && rm -rf $palette
-}
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+source $(brew --prefix)/share/chruby/chruby.sh
+source $(brew --prefix)/share/chruby/auto.sh
+
+if [ -f ~/.custom-zshrc ]; then
+    source ~/.custom-zshrc
+fi
