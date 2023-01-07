@@ -51,6 +51,8 @@
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
+> :shipit: Don't forget to execute **`Next steps`** after Homebrew is installed
+
 ## Install dependencies via Homebrew
 
 `brew bundle --file general.Brewfile`
@@ -79,4 +81,8 @@
 ### htop
 
 `ln -s ~/Developer/config/htoprc ~/.config/htop/htoprc`
+
+## Plug local zsh config to the main .zshrc
+`ln -s <local_zshrc_file> ~/.custom-zshrc`
+
 
