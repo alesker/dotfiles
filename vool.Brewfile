@@ -1,0 +1,10 @@
+brew "git-standup"
+brew "openjdk"
+
+cask "android-studio"
+cask "figma"
+cask "flutter"
+cask "linear-linear"
+cask "microsoft-teams"
+cask "miro"
+cask "visual-studio-code"
