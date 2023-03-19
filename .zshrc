@@ -137,3 +137,8 @@ source $(brew --prefix)/share/chruby/auto.sh
 if [ -f ~/.custom-zshrc ]; then
     source ~/.custom-zshrc
 fi
+
+if type neofetch &>/dev/null
+then
+    neofetch
+fi
