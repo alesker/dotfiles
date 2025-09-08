@@ -4,4 +4,4 @@ brew "chruby"
 brew "git"
 
 cask "fork"
-cask "paw"
+cask "bruno"
