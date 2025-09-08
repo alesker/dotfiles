@@ -11,7 +11,7 @@ brew "zsh-autosuggestions"
 brew "zsh-syntax-highlighting"
 
 cask "1password"
-cask "iterm2"
+cask "ghostty"
 cask "basictex"
 cask "deckset"
 cask "fliqlo"

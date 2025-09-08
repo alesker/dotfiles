@@ -70,6 +70,10 @@
 
 `ln -s ~/Developer/config/.zshrc ~/.zshrc`
 
+### Ghostty
+
+`mkdir ~/.config/ghostty && ln -s ~/Developer/config/ghostty-config ~/.config/ghostty/config`
+
 ### Vim
 
 `ln -s ~/Developer/config/.vimrc ~/.vimrc`
