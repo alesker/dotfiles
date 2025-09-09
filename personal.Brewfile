@@ -1,5 +1,3 @@
-brew "youtube-dl"
-
 cask "plex"
 cask "qbittorrent"
 cask "raspberry-pi-imager"
