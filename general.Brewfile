@@ -1,5 +1,3 @@
-tap "homebrew/cask-fonts"
-
 brew "bat"
 brew "fzf"
 brew "rg"
