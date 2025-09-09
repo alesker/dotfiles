@@ -138,3 +138,9 @@ if type neofetch &>/dev/null
 then
     neofetch
 fi
+
+## [Completion] 
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /Users/alesker/.dart-cli-completion/zsh-config.zsh ]] && . /Users/alesker/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+

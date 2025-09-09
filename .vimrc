@@ -107,6 +107,8 @@ Plug 'morhetz/gruvbox'
 Plug 'rakr/vim-one'
 
 Plug 'dense-analysis/ale'
+
+Plug 'ruby-formatter/rufo-vim'
 "Plug 'flazz/vim-colorschemes'
 call plug#end()
 
