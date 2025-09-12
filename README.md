@@ -64,26 +64,11 @@
 
 `sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
 
-## Link configs
+## Link configs with GNU Stow
 
-### zsh
+`stow zsh ghostty nvim htop -t ~ --verbose=2`
 
-`ln -s ~/Developer/config/.zshrc ~/.zshrc`
-
-### Ghostty
-
-`mkdir ~/.config/ghostty && ln -s ~/Developer/config/ghostty-config ~/.config/ghostty/config`
-
-
-### NeoVim
-
-`ln -s ~/Developer/config/neovim-init.lua ~/.config/nvim/init.lua`
-
-### htop
-
-`ln -s ~/Developer/config/htoprc ~/.config/htop/htoprc`
-
-## Plug local zsh config to the main .zshrc
+## Plug any local zsh config to the main .zshrc
 `ln -s <local_zshrc_file> ~/.custom-zshrc`
 
 
