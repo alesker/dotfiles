@@ -55,9 +55,9 @@
 
 ## Install dependencies via Homebrew
 
-`brew bundle --file general.Brewfile`
+`brew bundle --file brewfiles/general.Brewfile`
 
-`brew bundle --file development.Brewfile`
+`brew bundle --file brewfiles/development.Brewfile`
 
 
 ## Install [Oh My Zsh](https://ohmyz.sh/)
