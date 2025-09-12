@@ -74,13 +74,10 @@
 
 `mkdir ~/.config/ghostty && ln -s ~/Developer/config/ghostty-config ~/.config/ghostty/config`
 
-### Vim
-
-`ln -s ~/Developer/config/.vimrc ~/.vimrc`
 
 ### NeoVim
 
-`ln -s ~/Developer/config/neovim-init.vim ~/.config/nvim/init.vim`
+`ln -s ~/Developer/config/neovim-init.lua ~/.config/nvim/init.lua`
 
 ### htop
 

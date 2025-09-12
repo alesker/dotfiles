@@ -123,6 +123,7 @@ alias df='df -H'
 alias du='du -c -h'
 alias bc='bc -lqw'
 alias vim='nvim'
+alias rgf='() { rg $@ | fzf }'
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -139,7 +140,7 @@ then
     neofetch
 fi
 
-## [Completion] 
+## [Completion]
 ## Completion scripts setup. Remove the following line to uninstall
 [[ -f /Users/alesker/.dart-cli-completion/zsh-config.zsh ]] && . /Users/alesker/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
