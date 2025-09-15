@@ -42,7 +42,7 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 
-theme = dark:GruvboxDark,light:GruvboxLight
+theme = dark:Gruvbox Dark,light:Gruvbox Light
 font-family = JetBrains Mono
 font-size = 15
 
@@ -53,8 +53,6 @@ unfocused-split-opacity = 0.84
 unfocused-split-fill = ffffff
 
 maximize = true
-window-height = 99999
-window-width = 99999
 
 macos-icon = official
 macos-icon-ghost-color = 98971a

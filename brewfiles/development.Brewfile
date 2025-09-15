@@ -1,4 +1,3 @@
-# Development
 brew "ruby-install"
 brew "chruby"
 brew "git"
