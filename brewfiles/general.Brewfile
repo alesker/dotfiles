@@ -17,6 +17,7 @@ cask "deckset"
 cask "fliqlo"
 cask "ghostty"
 cask "grammarly-desktop"
+cask "jordanbaird-ice"
 cask "rocket"
 cask "spotify"
 
