@@ -69,6 +69,6 @@
 `stow zsh ghostty nvim htop -t ~ --verbose=2`
 
 ## Plug any local zsh config to the main .zshrc
-`ln -s <local_zshrc_file> ~/.custom-zshrc`
+`ln -s "$(pwd)/<local_zshrc_file>" ~/.custom-zshrc`
 
 
