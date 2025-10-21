@@ -135,9 +135,9 @@ if [ -f ~/.custom-zshrc ]; then
     source ~/.custom-zshrc
 fi
 
-if type neofetch &>/dev/null
+if type fastfetch &>/dev/null
 then
-    neofetch
+    fastfetch
 fi
 
 ## [Completion]
