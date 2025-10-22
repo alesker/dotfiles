@@ -4,3 +4,4 @@ brew "git"
 
 cask "fork"
 cask "bruno"
+cask "linear-linear"
