@@ -1,3 +1,7 @@
+tap "alesker/tap"
+
+brew "alesker/tap/neo"
+
 brew "bat"
 brew "fzf"
 brew "rg"
