@@ -1,6 +1,7 @@
 tap "alesker/tap"
 
 brew "alesker/tap/neo"
+cask "alesker/tap/neovimapp"
 
 brew "bat"
 brew "fzf"
