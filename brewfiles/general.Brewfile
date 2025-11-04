@@ -1,4 +1,4 @@
-tap "alesker/tap"
+tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git"
 
 brew "alesker/tap/neo"
 cask "alesker/tap/neovimapp"
