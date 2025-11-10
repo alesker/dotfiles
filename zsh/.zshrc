@@ -41,3 +41,6 @@ fi
 
 
 eval "$(zoxide init zsh --cmd cd)"
+
+export STARSHIP_CONFIG=~/.config/starship-pills.toml
+eval "$(starship init zsh)"

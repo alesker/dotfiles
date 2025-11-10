@@ -1,0 +1,47 @@
+"$schema" = "https://starship.rs/config-schema.json"
+
+format = """
+[╭](fg:default)\
+$directory\
+$git_branch\
+$git_status\
+$cmd_duration\
+$line_break\
+[╰](fg:default)\
+$character\
+"""
+
+palette = "default"
+
+[palettes.default]
+default = "#928374"
+tag = "#ebdbb2"
+dir = "cyan"
+git = "purple"
+cmd = "yellow"
+
+[character]
+success_symbol = "[](bold green)"
+error_symbol = "[](bold red)"
+
+[directory]
+truncation_length = 1
+read_only = " "
+style = "bold bg:default"
+format = "[](fg:dir)[ ](fg:tag bg:dir)[](fg:dir bg:default)[ $path]($style)[](fg:default bg:dir)[](fg:dir)"
+
+[git_branch]
+style = "bold bg:default"
+format = "[─](fg:default)[](fg:git)[](fg:tag bg:git)[](fg:git bg:default)[ $branch]($style)[](fg:default bg:git)"
+
+[git_status]
+style = "bold fg:tag bg:git"
+format = "[$all_status$ahead_behind]($style)[](fg:git)"
+
+[cmd_duration]
+style = "bold bg:default"
+format = "[─](fg:default)[](fg:cmd)[⚡](fg:tag bg:cmd)[](fg:cmd bg:default)[ $duration]($style)[](fg:default bg:cmd)[](fg:cmd)"
+
+[fill]
+symbol = "─"
+style = "bold bg:default"
