@@ -66,9 +66,8 @@ format = '[ $user ]($style)'
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
-format = "[ $path ]($style)"
-truncation_length = 3
-truncation_symbol = "…/"
+format = "[  $path ]($style)"
+truncation_length = 1
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -78,9 +77,8 @@ truncation_symbol = "…/"
 "Developer" = "󰲋 "
 
 [git_branch]
-symbol = ""
 style = "bg:color_aqua"
-format = '[[ $symbol $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+format = '[[  $branch ](fg:color_fg0 bg:color_aqua)]($style)'
 
 [git_status]
 style = "bg:color_aqua"
@@ -88,7 +86,7 @@ format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
 
 [cmd_duration]
 style = "bg:color_blue"
-format = '[[ ⚡$duration ](fg:color_fg0 bg:color_blue)]($style)'
+format = '[[  $duration ](fg:color_fg0 bg:color_blue)]($style)'
 
 [time]
 disabled = false
