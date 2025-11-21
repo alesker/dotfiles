@@ -21,4 +21,4 @@ alias df='df -H'
 alias du='du -c -h'
 alias bc='bc -lqw'
 
-alias rgf='() { rg $@ | fzf }'
+alias rgf='() { rg $@ --hidden | fzf }'
