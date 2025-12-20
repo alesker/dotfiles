@@ -27,6 +27,7 @@ cask "grammarly-desktop"
 cask "jordanbaird-ice"
 cask "rocket"
 cask "spotify"
+cask "zoom"
 
 cask "font-caveat"
 cask "font-caveat-brush"
