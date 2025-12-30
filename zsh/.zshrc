@@ -24,19 +24,14 @@ for lib_file ("$ZSH"/lib/*.zsh); do
 done
 unset lib_file
 
+
 source <(fzf --zsh)
 
 source $(brew --prefix)/share/chruby/chruby.sh
 source $(brew --prefix)/share/chruby/auto.sh
 
-
 if [ -f ~/.custom-zshrc ]; then
   source ~/.custom-zshrc
-fi
-
-
-if type fastfetch &>/dev/null; then
-  fastfetch
 fi
 
 
@@ -44,3 +39,8 @@ eval "$(zoxide init zsh --cmd cd)"
 
 export STARSHIP_CONFIG=~/.config/starship-pills.toml
 eval "$(starship init zsh)"
+
+
+if type fastfetch &>/dev/null; then
+  fastfetch
+fi
