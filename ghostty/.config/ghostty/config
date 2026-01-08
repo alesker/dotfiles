@@ -58,4 +58,6 @@ macos-icon = official
 macos-icon-ghost-color = 98971a
 macos-icon-screen-color = 282828
 
+macos-option-as-alt = true
+
 window-save-state = always
