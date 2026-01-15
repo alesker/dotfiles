@@ -1,12 +1,17 @@
 // CONFIGURATION
-const float DURATION = 0.15;               // How long the ripple animates (seconds)
-const float MAX_RADIUS = 0.05;             // Max radius in normalized coords (0.5 = 1/4 screen height)
-const float RING_THICKNESS = 0.02;             // Ring width in normalized coords
-const float CURSOR_WIDTH_CHANGE_THRESHOLD = 0.5; // Triggers ripple if cursor width changes by this fraction
-vec4 COLOR = vec4(0.35, 0.36, 0.44, 1.0); // change to iCurrentCursorColor for your cursor's color
-const float BLUR = 3.0;                    // Blur level in pixels
-const float ANIMATION_START_OFFSET = 0.0;        // Start the ripple slightly progressed (0.0 - 1.0)
+const float ANIMATION_START_OFFSET = 0.01;
 
+const float BLUR = 3.5;
+
+vec4 COLOR = vec4(iCurrentCursorColor[0], iCurrentCursorColor[1], iCurrentCursorColor[2], 0.8);
+
+const float CURSOR_WIDTH_CHANGE_THRESHOLD = 0.5;
+
+const float DURATION = 0.15;
+
+const float MAX_RADIUS = 0.025;
+
+const float RING_THICKNESS = 0.02;
 
 // Easing functions
 float easeOutQuad(float t) {
