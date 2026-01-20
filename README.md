@@ -71,4 +71,6 @@
 ## Plug any local zsh config to the main .zshrc
 `ln -s "$(pwd)/<local_zshrc_file>" ~/.custom-zshrc`
 
-
+## Bootstrap secrets
+`chmod 755 ./scripts/bootstrap-secrets.sh`
+`./scripts/bootstrap-secrets.sh`
