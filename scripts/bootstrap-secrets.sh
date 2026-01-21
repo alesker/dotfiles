@@ -3,6 +3,7 @@
 op account get >/dev/null
 
 SECRETS=(
+  "OPENAI_NEOVIM_MINUET_KEY|OpenAI API/neovim-minuet"
 )
 
 for item in "${SECRETS[@]}"; do
