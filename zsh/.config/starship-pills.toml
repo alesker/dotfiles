@@ -1,5 +1,4 @@
 "$schema" = "https://starship.rs/config-schema.json"
-
 format = """
 [╭](fg:default)\
 $directory\
@@ -10,7 +9,6 @@ $line_break\
 [╰](fg:default)\
 $character\
 """
-
 palette = "default"
 
 [palettes.default]

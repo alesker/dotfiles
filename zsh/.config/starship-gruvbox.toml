@@ -1,5 +1,4 @@
-"$schema" = 'https://starship.rs/config-schema.json'
-
+"$schema" = "https://starship.rs/config-schema.json"
 format = """
 [](color_orange)\
 $os\
@@ -15,20 +14,19 @@ $cmd_duration\
 $time\
 [ ](fg:color_bg1)\
 $line_break$character"""
-
-palette = 'gruvbox'
+palette = "gruvbox"
 
 [palettes.gruvbox]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
+color_fg0 = "#fbf1c7"
+color_bg1 = "#3c3836"
+color_bg3 = "#665c54"
+color_blue = "#458588"
+color_aqua = "#689d6a"
+color_green = "#98971a"
+color_orange = "#d65d0e"
+color_purple = "#b16286"
+color_red = "#cc241d"
+color_yellow = "#d79921"
 
 [os]
 disabled = false
@@ -62,7 +60,7 @@ Pop = ""
 show_always = true
 style_user = "bg:color_orange fg:color_fg0"
 style_root = "bg:color_orange fg:color_fg0"
-format = '[ $user ]($style)'
+format = "[ $user ]($style)"
 
 [directory]
 style = "fg:color_fg0 bg:color_yellow"
@@ -78,30 +76,30 @@ truncation_length = 1
 
 [git_branch]
 style = "bg:color_aqua"
-format = '[[  $branch ](fg:color_fg0 bg:color_aqua)]($style)'
+format = "[[  $branch ](fg:color_fg0 bg:color_aqua)]($style)"
 
 [git_status]
 style = "bg:color_aqua"
-format = '[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)'
+format = "[[($all_status$ahead_behind )](fg:color_fg0 bg:color_aqua)]($style)"
 
 [cmd_duration]
 style = "bg:color_blue"
-format = '[[  $duration ](fg:color_fg0 bg:color_blue)]($style)'
+format = "[[  $duration ](fg:color_fg0 bg:color_blue)]($style)"
 
 [time]
 disabled = false
 time_format = "%R"
 style = "bg:color_bg1"
-format = '[[  $time ](fg:color_fg0 bg:color_bg1)]($style)'
+format = "[[  $time ](fg:color_fg0 bg:color_bg1)]($style)"
 
 [line_break]
 disabled = false
 
 [character]
 disabled = false
-success_symbol = '[](bold fg:color_green)'
-error_symbol = '[](bold fg:color_red)'
-vimcmd_symbol = '[](bold fg:color_green)'
-vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
-vimcmd_replace_symbol = '[](bold fg:color_purple)'
-vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+success_symbol = "[](bold fg:color_green)"
+error_symbol = "[](bold fg:color_red)"
+vimcmd_symbol = "[](bold fg:color_green)"
+vimcmd_replace_one_symbol = "[](bold fg:color_purple)"
+vimcmd_replace_symbol = "[](bold fg:color_purple)"
+vimcmd_visual_symbol = "[](bold fg:color_yellow)"
