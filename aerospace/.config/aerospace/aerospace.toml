@@ -1,0 +1,69 @@
+config-version = 2
+start-at-login = true
+after-startup-command = []
+default-root-container-layout = "tiles"
+default-root-container-orientation = "auto"
+accordion-padding = 32
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+automatically-unhide-macos-hidden-apps = false
+on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
+on-mode-changed = []
+persistent-workspaces = ["1", "2", "3", "4"]
+
+[key-mapping]
+preset = "qwerty"
+
+[gaps]
+inner.horizontal = 4
+inner.vertical = 4
+outer.left = 0
+outer.bottom = 0
+outer.top = 0
+outer.right = 0
+
+[mode.main.binding]
+alt-1 = "workspace 1"
+alt-2 = "workspace 2"
+alt-3 = "workspace 3"
+alt-4 = "workspace 4"
+alt-shift-1 = "move-node-to-workspace 1"
+alt-shift-2 = "move-node-to-workspace 2"
+alt-shift-3 = "move-node-to-workspace 3"
+alt-shift-4 = "move-node-to-workspace 4"
+alt-h = "focus left"
+alt-j = "focus down"
+alt-k = "focus up"
+alt-l = "focus right"
+alt-shift-h = "move left"
+alt-shift-j = "move down"
+alt-shift-k = "move up"
+alt-shift-l = "move right"
+alt-enter = "fullscreen"
+alt-f = "layout floating tiling"
+alt-slash = "layout tiles horizontal vertical"
+alt-comma = "layout accordion horizontal vertical"
+alt-minus = "resize smart -50"
+alt-equal = "resize smart +50"
+alt-0 = "balance-sizes"
+alt-tab = "workspace-back-and-forth"
+alt-shift-semicolon = "mode service"
+
+[mode.service.binding]
+esc = "mode main"
+r = ["reload-config", "mode main"]
+f = "flatten-workspace-tree"
+h = "join-with left"
+j = "join-with down"
+k = "join-with up"
+l = "join-with right"
+
+[[on-window-detected]]
+if.workspace = "1"
+check-further-callbacks = true
+run = "layout floating"
+
+# Ghostty uses macOS native tabs, which are represented as separate windows in the macOS API, so tiling gets confused
+[[on-window-detected]]
+if.app-id = "com.mitchellh.ghostty"
+run = ["layout floating", "fullscreen"]

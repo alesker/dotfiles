@@ -1,7 +1,10 @@
 tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git"
+tap "nikitabobko/tap"
 
 brew "alesker/tap/neo"
 cask "alesker/tap/neovimapp"
+
+cask "nikitabobko/tap/aerospace"
 
 brew "antidote"
 brew "bat"
