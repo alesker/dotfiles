@@ -44,7 +44,7 @@
 
 theme = dark:Gruvbox Dark,light:Gruvbox Light
 font-family = JetBrains Mono
-font-size = 15
+font-size = 14
 
 background-opacity = 0.94
 background-blur = 3
@@ -65,3 +65,8 @@ macos-icon-screen-color = 282828
 macos-option-as-alt = true
 
 window-save-state = always
+
+quick-terminal-size = 40%,50%
+keybind = global:cmd+escape=toggle_quick_terminal
+
+
