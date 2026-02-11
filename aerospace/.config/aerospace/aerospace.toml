@@ -9,7 +9,12 @@ enable-normalization-opposite-orientation-for-nested-containers = true
 automatically-unhide-macos-hidden-apps = false
 on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
 on-mode-changed = []
-persistent-workspaces = ["1", "2", "3", "4"]
+persistent-workspaces = [
+  "1",  # regular macOS "everything floats" workspace
+  "2",  # focused-work workspace for coding
+  "3",  # focused-work workspace for browsing
+  "4",  # comms and media workspace
+]
 
 [key-mapping]
 preset = "qwerty"
@@ -27,10 +32,10 @@ alt-1 = "workspace 1"
 alt-2 = "workspace 2"
 alt-3 = "workspace 3"
 alt-4 = "workspace 4"
-alt-shift-1 = "move-node-to-workspace 1"
-alt-shift-2 = "move-node-to-workspace 2"
-alt-shift-3 = "move-node-to-workspace 3"
-alt-shift-4 = "move-node-to-workspace 4"
+alt-shift-1 = ["layout floating", "move-node-to-workspace 1"]
+alt-shift-2 = ["layout tiling", "move-node-to-workspace 2"]
+alt-shift-3 = ["layout tiling", "move-node-to-workspace 3"]
+alt-shift-4 = ["layout tiling", "move-node-to-workspace 4"]
 alt-h = "focus left"
 alt-j = "focus down"
 alt-k = "focus up"
@@ -63,7 +68,12 @@ if.workspace = "1"
 check-further-callbacks = true
 run = "layout floating"
 
-# Ghostty uses macOS native tabs, which are represented as separate windows in the macOS API, so tiling gets confused
+# These apps use macOS native tabs, which are represented as separate windows in the macOS API, so tiling gets confused
+
 [[on-window-detected]]
 if.app-id = "com.mitchellh.ghostty"
+run = ["layout floating", "fullscreen"]
+
+[[on-window-detected]]
+if.app-id = "com.DanPristupov.Fork"
 run = ["layout floating", "fullscreen"]
