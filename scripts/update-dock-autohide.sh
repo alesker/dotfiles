@@ -8,8 +8,8 @@ Usage:
   $SCRIPT <command>
 
 Commands:
-  update      Update something
-  restore     Restore something
+  update      Make Dock's autohide animations faster
+  restore     Restore Dock autohide defaults
 
 Options:
   -h, --help  Show this help message
