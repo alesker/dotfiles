@@ -47,26 +47,28 @@
 
 `git clone git@github.com:alesker/config.git`
 
-## Install [Homebrew](https://brew.sh)
+
+## Install stuff with [Homebrew](https://brew.sh)
+
+### Run the install script
 
 `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
 
 > :shipit: Don't forget to execute **`Next steps`** after Homebrew is installed
 
-## Install dependencies via Homebrew
+### Install dependencies via Homebrew
 
 `brew bundle --file brewfiles/general.Brewfile`
 
 `brew bundle --file brewfiles/development.Brewfile`
 
+Bundle other brewfiles depending on the machine (personal, work, etc.)
 
-## Install [Oh My Zsh](https://ohmyz.sh/)
-
-`sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"`
+> :shipit: Don't forget to run `brew caveats` for every brewfile and follow instructions when necessary
 
 ## Link configs with GNU Stow
 
-`stow zsh ghostty nvim htop -t ~ --verbose=2`
+`stow zsh aerospace nvim ghostty htop -t ~ --verbose=2`
 
 ## Plug any local zsh config to the main .zshrc
 `ln -s "$(pwd)/<local_zshrc_file>" ~/.custom-zshrc`
@@ -74,3 +76,14 @@
 ## Bootstrap secrets
 `chmod 755 ./scripts/bootstrap-secrets.sh`
 `./scripts/bootstrap-secrets.sh`
+
+## Change system and tooling defaults
+
+### Update Dock autohide behavior
+`chmod 755 ./scripts/update-dock-autohide.sh
+`./scripts/update-dock-autohide.sh update
+
+### Update GOPATH
+`chmod 755 ./scripts/update-go-path.sh
+`./scripts/update-go-path.sh hide
+
