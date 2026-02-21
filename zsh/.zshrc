@@ -40,7 +40,6 @@ eval "$(zoxide init zsh --cmd cd)"
 export STARSHIP_CONFIG=~/.config/starship-pills.toml
 eval "$(starship init zsh)"
 
-
-if type fastfetch &>/dev/null; then
+if type fastfetch &>/dev/null && [[ -z "$NVIM" ]]; then
   fastfetch
 fi
