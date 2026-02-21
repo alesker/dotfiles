@@ -1,7 +1,11 @@
 brew "git"
 
-brew "docker"
 brew "colima"
+brew "docker"
+brew "docker-buildx"
+brew "docker-compose"
+brew "lazydocker"
+brew "resterm"
 
 brew "ruby-install"
 brew "chruby"
@@ -11,5 +15,4 @@ brew "go-air"
 brew "go-blueprint"
 
 cask "fork"
-cask "bruno"
 cask "linear-linear"
