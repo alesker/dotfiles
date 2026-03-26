@@ -1,6 +1,6 @@
 cask "plex"
 cask "qbittorrent"
 cask "raspberry-pi-imager"
-casl "sony-ps-remote-play"
+cask "sony-ps-remote-play"
 cask "tunnelbear"
 cask "vlc"
