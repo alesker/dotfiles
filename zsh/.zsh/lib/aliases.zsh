@@ -22,3 +22,5 @@ alias du='du -c -h'
 alias bc='bc -lqw'
 
 alias rgf='() { rg $@ --hidden | fzf }'
+
+alias resterm='export RESTERM_CONFIG_DIR="$HOME/.config/resterm"; resterm'

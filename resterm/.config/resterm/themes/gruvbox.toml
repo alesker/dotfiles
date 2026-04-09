@@ -1,0 +1,593 @@
+[metadata]
+name = "Gruvbox"
+description = "Gruvbox ANSI theme first pass using only black and white for contrast review"
+author = "Alesker"
+version = "1.0.0"
+tags = ["gruvbox", "ansi", "contrast"]
+
+# Use quoted ANSI color indexes so Resterm treats them as Lip Gloss colors.
+# -  0 black, 1 red, 2 green, 3 yellow, 4 blue, 5 magenta, 6 cyan, 7 white
+# -  8 bright_black, 9 bright_red, 10 bright_green, 11 bright_yellow
+# - 12 bright_blue, 13 bright_magenta, 14 bright_cyan, 15 bright_white
+
+# First pass intentionally uses only 0 and 7 to verify contrast before adding color.
+
+[styles.browser_border]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.editor_border]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.response_border]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.navigator_title]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.navigator_title_selected]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.navigator_subtitle]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.navigator_subtitle_selected]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.navigator_badge]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.navigator_tag]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.app_frame]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.header]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.header_title]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.header_value]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.header_separator]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.header_brand]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.status_bar]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.status_bar_key]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.status_bar_value]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.command_bar]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.command_bar_hint]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.command_divider]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.tabs]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.tab_active]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.tab_inactive]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.notification]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.error]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.success]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.pane_title]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.pane_title_file]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.pane_title_requests]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.pane_divider]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.editor_hint_box]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.editor_hint_item]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.editor_hint_selected]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.editor_hint_annotation]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.list_item_title]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.list_item_description]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.list_item_selected_title]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.list_item_selected_description]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.list_item_dimmed_title]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.list_item_dimmed_description]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.list_item_filter_match]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.response_search_highlight]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.response_search_highlight_active]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.response_content]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.response_content_raw]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.response_content_headers]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.response_selection]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.response_cursor]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_label]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.explain_value]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.explain_muted]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.explain_section_title]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.explain_section_border]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.explain_badge_ready]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_badge_skipped]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_badge_error]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_stage_ok]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_stage_skipped]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_stage_error]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_change_add]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_change_remove]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_change_update]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.explain_warning]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.stream_content]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.stream_timestamp]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.stream_direction_send]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.stream_direction_receive]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.stream_direction_info]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.stream_event_name]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.stream_data]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.stream_binary]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.stream_summary]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.stream_error]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.stream_console_title]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.stream_console_mode]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.stream_console_status]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.stream_console_prompt]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[styles.stream_console_input]
+foreground = "7"
+background = "0"
+border_color = "7"
+border_background = "0"
+
+[styles.stream_console_input_focused]
+foreground = "0"
+background = "7"
+border_color = "0"
+border_background = "7"
+
+[colors]
+pane_border_focus_file = "7"
+pane_border_focus_requests = "7"
+pane_active_foreground = "7"
+method_get = "7"
+method_post = "7"
+method_put = "7"
+method_patch = "7"
+method_delete = "7"
+method_head = "7"
+method_options = "7"
+method_grpc = "7"
+method_ws = "7"
+method_default = "7"
+
+[editor_metadata]
+comment_marker = "7"
+directive_default = "7"
+value = "7"
+setting_key = "7"
+setting_value = "7"
+request_line = "7"
+request_separator = "7"
+rts_keyword_default = "7"
+rts_keyword_decl = "7"
+rts_keyword_control = "7"
+rts_keyword_literal = "7"
+rts_keyword_logical = "7"
+
+[editor_metadata.directive_colors]
+name = "7"
+description = "7"
+desc = "7"
+tag = "7"
+tags = "7"
+const = "7"
+global = "7"
+global-secret = "7"
+file = "7"
+file-secret = "7"
+request = "7"
+request-secret = "7"
+var = "7"
+capture = "7"
+use = "7"
+patch = "7"
+apply = "7"
+when = "7"
+skip-if = "7"
+assert = "7"
+for-each = "7"
+script = "7"
+workflow = "7"
+step = "7"
+if = "7"
+elif = "7"
+else = "7"
+switch = "7"
+case = "7"
+default = "7"
+compare = "7"
+profile = "7"
+trace = "7"
+no-log = "7"
+log-sensitive-headers = "7"
+setting = "7"
+settings = "7"
+timeout = "7"
+auth = "7"
+graphql = "7"
+graphql-operation = "7"
+operation = "7"
+variables = "7"
+graphql-variables = "7"
+query = "7"
+graphql-query = "7"
+grpc = "7"
+grpc-descriptor = "7"
+grpc-reflection = "7"
+grpc-plaintext = "7"
+grpc-authority = "7"
+grpc-metadata = "7"
+sse = "7"
+websocket = "7"
+ws = "7"
+ssh = "7"
+k8s = "7"
+
+[[header_segments]]
+background = "7"
+foreground = "0"
+border = "0"
+accent = "0"
+
+[[command_segments]]
+background = "7"
+border = "0"
+key = "0"
+text = "0"
