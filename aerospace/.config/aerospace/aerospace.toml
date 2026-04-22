@@ -51,7 +51,7 @@ alt-comma = "layout accordion horizontal vertical"
 alt-minus = "resize smart -50"
 alt-equal = "resize smart +50"
 alt-0 = "balance-sizes"
-alt-tab = "workspace-back-and-forth"
+alt-tab = "focus dfs-next --boundaries workspace --boundaries-action wrap-around-the-workspace"
 alt-shift-semicolon = "mode service"
 
 [mode.service.binding]
