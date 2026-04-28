@@ -1,0 +1,7 @@
+[mgr]
+prepend_keymap = [
+  { on = "<Up>", run = "noop" },
+  { on = "<Down>", run = "noop" },
+  { on = "<Left>", run = "noop" },
+  { on = "<Right>", run = "noop" },
+]

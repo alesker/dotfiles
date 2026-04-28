@@ -1,0 +1,31 @@
+[mgr]
+ratio = [2, 5, 3]
+sort_by = "natural"
+sort_dir_first = true
+linemode = "size"
+show_hidden = true
+show_symlink = true
+scrolloff = 5
+mouse_events = ["scroll"]
+
+[opener]
+edit = [
+  { run = '$EDITOR "$@"', block = true, for = "unix" },
+]
+open = [
+  { run = 'open "$@"', desc = "Open", for = "macos" },
+]
+reveal = [
+  { run = 'open -R "$1"', desc = "Reveal in Finder", for = "macos" },
+]
+
+[open]
+rules = [
+  { name = "*/", use = ["open", "reveal"] },
+  { mime = "text/*", use = ["edit", "open", "reveal"] },
+  { mime = "image/*", use = ["open", "reveal"] },
+  { mime = "video/*", use = ["open", "reveal"] },
+  { mime = "audio/*", use = ["open", "reveal"] },
+  { mime = "application/pdf", use = ["open", "reveal"] },
+  { name = "*", use = ["open", "reveal"] },
+]

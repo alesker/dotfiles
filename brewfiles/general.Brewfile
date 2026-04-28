@@ -22,6 +22,7 @@ brew "stow"
 brew "tlrc"
 brew "tree-sitter-cli"
 brew "wget"
+brew "yazi"
 brew "zoxide"
 brew "zsh"
 

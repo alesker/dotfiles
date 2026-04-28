@@ -68,7 +68,7 @@ Bundle other brewfiles depending on the machine (personal, work, etc.)
 
 ## Link configs with GNU Stow
 
-`stow zsh aerospace nvim ghostty htop`
+`stow zsh aerospace nvim ghostty yazi htop`
 
 ## Plug any local zsh config to the main .zshrc
 `ln -s "$(pwd)/<local_zshrc_file>" ~/.custom-zshrc`
