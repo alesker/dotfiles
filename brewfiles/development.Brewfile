@@ -1,5 +1,6 @@
-brew "git"
+brew "gh"
 
+brew "ansible"
 brew "colima"
 brew "docker"
 brew "docker-buildx"
