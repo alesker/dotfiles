@@ -1,0 +1,66 @@
+gui:
+  scrollPastBottom: false
+  showRandomTip: false
+  showCommandLog: false
+  showFileTree: false
+  showNumstatInFilesView: true
+  nerdFontsVersion: "3"
+  splitDiff: auto
+  mainPanelSplitMode: vertical
+  expandFocusedSidePanel: false
+  wrapLinesInStagingView: false
+  useHunkModeInStagingView: true
+
+git:
+  autoFetch: false
+  fetchAll: false
+  autoForwardBranches: none
+  disableForcePushing: true
+  commit:
+    autoWrapCommitMessage: true
+    autoWrapWidth: 70
+  pagers:
+    - pager: >-
+        delta \
+          --syntax-theme=gruvbox-$(system-appearance) \
+          --features=diff-theme-$(system-appearance) \
+          --paging=never \
+          --hyperlinks \
+          --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
+
+    - pager: ""
+
+disableStartupPopups: true
+
+keybinding:
+  universal:
+    pushFiles: <disabled>
+    pullFiles: <disabled>
+    createRebaseOptionsMenu: <disabled>
+  files:
+    commitChangesWithoutHook: <disabled>
+    fetch: <disabled>
+    openMergeOptions: <disabled>
+    viewResetOptions: <disabled>
+    stashAllChanges: <disabled>
+    viewStashOptions: <disabled>
+  branches:
+    rebaseBranch: <disabled>
+    mergeIntoCurrentBranch: <disabled>
+    fastForward: <disabled>
+    setUpstream: <disabled>
+    fetchRemote: <disabled>
+    pushTag: <disabled>
+    createTag: <disabled>
+    forceCheckoutBranch: <disabled>
+  commits:
+    amendToCommit: <disabled>
+    startInteractiveRebase: <disabled>
+    squashDown: <disabled>
+    squashAboveCommits: <disabled>
+    moveDownCommit: <disabled>
+    moveUpCommit: <disabled>
+    revertCommit: <disabled>
+    cherryPickCopy: <disabled>
+    pasteCommits: <disabled>
+    tagCommit: <disabled>
