@@ -16,4 +16,5 @@ brew "go-air"
 brew "go-blueprint"
 
 cask "fork"
+cask "opencode-desktop"
 cask "linear-linear"
