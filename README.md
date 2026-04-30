@@ -6,7 +6,7 @@
 ### Generating a new SSH key
 1. Create a new SSH key, using email as a label
     ```
-    ssh-keygen -t ed25519 -C "your_email@example.com"
+    ssh-keygen -t ed25519 -C "ilya.alesker@gmail.com"
     ```
 
 ### Adding the SSH key to the ssh-agent

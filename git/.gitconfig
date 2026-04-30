@@ -1,0 +1,37 @@
+[user]
+    name = Ilya Alesker
+    email = ilya.alesker@gmail.com
+
+[core]
+    pager = delta --syntax-theme=gruvbox-$(system-appearance) --features=diff-theme-$(system-appearance) --side-by-side --line-numbers
+
+[interactive]
+    diffFilter = delta --syntax-theme=gruvbox-$(system-appearance) --features=diff-theme-$(system-appearance) --color-only
+
+[delta]
+    navigate = true
+    pager = less --RAW-CONTROL-CHARS --mouse
+    file-style = bold purple
+    file-decoration-style = purple box
+
+[delta "diff-theme-dark"]
+    minus-style                   = syntax "#961A15"
+    minus-non-emph-style          = syntax "#961A15"
+    minus-emph-style              = syntax "#B9211A"
+    minus-empty-line-marker-style = normal "#961A15"
+    zero-style                    = syntax
+    plus-style                    = syntax "#375338"
+    plus-non-emph-style           = syntax "#375338"
+    plus-emph-style               = syntax "#456846"
+    plus-empty-line-marker-style  = normal "#375338"
+
+[delta "diff-theme-light"]
+    minus-style                   = syntax "#ECADAB"
+    minus-non-emph-style          = syntax "#ECADAB"
+    minus-emph-style              = syntax "#E48D8A"
+    minus-empty-line-marker-style = normal "#ECADAB"
+    zero-style                    = syntax
+    plus-style                    = syntax "#A5C5A7"
+    plus-non-emph-style           = syntax "#A5C5A7"
+    plus-emph-style               = syntax "#84AF86"
+    plus-empty-line-marker-style  = normal "#A5C5A7"
