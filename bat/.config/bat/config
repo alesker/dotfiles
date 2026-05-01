@@ -1,0 +1,7 @@
+--theme="auto"
+--theme-dark="gruvbox-dark"
+--theme-light="gruvbox-light"
+
+--wrap="never"
+
+--italic-text="always"

@@ -21,7 +21,7 @@ alias lt='eza --tree --level=2 -A --git-ignore'
 alias ltt='eza --tree --level=3 -A --git-ignore'
 alias lttt='eza --tree --level=4 -A --git-ignore'
 
-alias cat='bat'
+alias cat='bat --style=plain --paging=never'
 alias vim='nvim'
 
 alias da='date "+%A, %B %d, %Y [%T]"'

@@ -1,7 +1,6 @@
 # yazi wrapper that changes cwd on exit
 function yy() {
   local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-  echo "$@"
   command yazi "$@" --cwd-file="$tmp"
   IFS= read -r -d '' cwd <"$tmp"
   [ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd"
