@@ -56,3 +56,31 @@ cask "font-jetbrains-mono"
 cask "font-monoton"
 cask "font-neucha"
 cask "font-sigmar-one"
+
+# Mac App Store
+brew "mas"
+
+mas "Amphetamine", id: 937984704
+mas "AudioBookBinder", id: 413969927
+mas "Boop", id: 1518425043
+mas "Developer", id: 640199958
+mas "Goodnotes", id: 1444383602
+mas "Hand Mirror", id: 1502839586
+mas "iMovie", id: 408981434
+mas "Keynote", id: 409183694
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Paper", id: 1143513744
+mas "Parcel", id: 375589283
+mas "Spark Desktop", id: 6445813049
+mas "Telegram", id: 747648890
+mas "Things", id: 904280696
+mas "Trello", id: 1278508951
+mas "Xcode", id: 497799835
+
+mas "1Password for Safari", id: 1569813296
+mas "Grammarly for Safari", id: 1462114288
+mas "Noir", id: 1592917505
+mas "Refined GitHub", id: 1519867270
+mas "Save to Pocket", id: 1477385213
+mas "Wipr", id: 1662217862

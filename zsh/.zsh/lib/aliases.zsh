@@ -30,3 +30,6 @@ alias du='du -c -h'
 alias bc='bc -lqw'
 
 alias lazygit='lazygit --use-config-file "$HOME/.config/lazygit/config.yml"'
+
+alias lzg='lazygit --use-config-file "$HOME/.config/lazygit/config.yml"'
+alias lzd='lazydocker'
