@@ -1,3 +1,7 @@
+tap "agavra/tap"
+
+brew "agavra/tap/tuicr"
+
 brew "gh"
 
 brew "ansible"
@@ -17,4 +21,4 @@ brew "go-blueprint"
 
 cask "fork"
 cask "opencode-desktop"
-cask "linear-linear"
+cask "linear"

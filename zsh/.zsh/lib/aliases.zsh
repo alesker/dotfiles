@@ -22,6 +22,7 @@ alias ltt='eza --tree --level=3 -A --git-ignore'
 alias lttt='eza --tree --level=4 -A --git-ignore'
 
 alias cat='bat --style=plain --paging=never'
+
 alias vim='nvim'
 
 alias da='date "+%A, %B %d, %Y [%T]"'
@@ -31,5 +32,5 @@ alias bc='bc -lqw'
 
 alias lazygit='lazygit --use-config-file "$HOME/.config/lazygit/config.yml"'
 
-alias lzg='lazygit --use-config-file "$HOME/.config/lazygit/config.yml"'
+alias lzg='lazygit'
 alias lzd='lazydocker'

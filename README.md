@@ -80,7 +80,7 @@ Bundle other brewfiles depending on the machine (personal, work, etc.)
 ## Link configs with GNU Stow
 
 ```
-stow zsh aerospace nvim ghostty yazi htop
+stow aerospace bat ghostty git htop lazygit nvim tuicr yazi zsh
 ```
 
 ## Plug any local zsh config to the main .zshrc

@@ -1,0 +1,13 @@
+appearance = "system"
+theme_dark = "gruvbox-dark"
+theme_light = "gruvbox-light"
+
+show_file_list = true
+wrap = false
+
+comment_types = [
+  { id = "fix", definition = "make this requested change", color = "red" },
+  { id = "note", definition = "validate this concern, and if correct, make the change, otherwise explain why no change is needed", color = "yellow" },
+  { id = "question", definition = "answer this question before deciding what, if anything, should change", color = "blue" },
+  { id = "praise", definition = "positive feedback worth preserving", color = "green" },
+]
