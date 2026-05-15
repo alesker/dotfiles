@@ -8,7 +8,7 @@ gui:
   splitDiff: auto
   mainPanelSplitMode: vertical
   expandFocusedSidePanel: false
-  wrapLinesInStagingView: false
+  wrapLinesInStagingView: true
   useHunkModeInStagingView: true
 
 git:
