@@ -2,10 +2,6 @@
 tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git"
 tap "nikitabobko/tap"
 
-brew "alesker/tap/neo"
-cask "alesker/tap/neovimapp"
-cask "nikitabobko/tap/aerospace"
-
 # Shell and environment
 brew "antidote"
 brew "python"
@@ -18,6 +14,7 @@ brew "zsh"
 # Source control
 brew "delta"
 brew "git"
+brew "alesker/tap/neo"
 
 # Editor
 brew "neovim"
@@ -32,17 +29,21 @@ brew "fastfetch"
 brew "pandoc"
 brew "pwgen"
 brew "tlrc"
+brew "viu"
 brew "wget"
 brew "yazi"
 
 # Casks
 cask "1password"
 cask "1password-cli"
+cask "nikitabobko/tap/aerospace"
 cask "basictex"
 cask "deckset"
 cask "fliqlo"
 cask "ghostty"
 cask "grammarly-desktop"
+cask "alesker/tap/neovimapp"
+cask "obsidian"
 cask "rocket"
 cask "spotify"
 cask "thaw"

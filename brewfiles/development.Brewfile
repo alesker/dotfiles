@@ -1,15 +1,17 @@
+tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git"
 tap "agavra/tap"
 
-brew "agavra/tap/tuicr"
+brew "hurl"
 
 brew "gh"
+brew "lazygit"
+brew "agavra/tap/tuicr"
 
 brew "ansible"
 brew "colima"
 brew "docker"
 brew "docker-buildx"
 brew "docker-compose"
-brew "hurl"
 brew "lazydocker"
 
 brew "ruby-install"
@@ -20,5 +22,5 @@ brew "go-air"
 brew "go-blueprint"
 
 cask "fork"
-cask "opencode-desktop"
 cask "linear"
+cask "alesker/tap/opencode"
