@@ -1,5 +1,6 @@
 tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git"
 tap "agavra/tap"
+tap "hay-kot/scaffold-tap"
 
 brew "hurl"
 
@@ -24,3 +25,4 @@ brew "go-blueprint"
 cask "fork"
 cask "linear"
 cask "alesker/tap/opencode"
+cask "hay-kot/scaffold-tap/scaffold"
