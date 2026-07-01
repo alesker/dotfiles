@@ -47,7 +47,6 @@ cask "obsidian"
 cask "rocket"
 cask "spotify"
 cask "thaw"
-cask "zoom"
 
 # Fonts
 cask "font-caveat"
@@ -62,7 +61,6 @@ cask "font-sigmar-one"
 brew "mas"
 
 mas "Amphetamine", id: 937984704
-mas "AudioBookBinder", id: 413969927
 mas "Boop", id: 1518425043
 mas "Developer", id: 640199958
 mas "Goodnotes", id: 1444383602
@@ -83,5 +81,4 @@ mas "1Password for Safari", id: 1569813296
 mas "Grammarly for Safari", id: 1462114288
 mas "Noir", id: 1592917505
 mas "Refined GitHub", id: 1519867270
-mas "Save to Pocket", id: 1477385213
 mas "Wipr", id: 1662217862
