@@ -16,6 +16,13 @@ persistent-workspaces = [
   "4",  # comms and media workspace
 ]
 
+[workspace-to-monitor-force-assignment]
+1 = "main"
+2 = "main"
+3 = "main"
+4 = "main"
+5 = "secondary"
+
 [key-mapping]
 preset = "qwerty"
 
@@ -32,10 +39,12 @@ alt-1 = "workspace 1"
 alt-2 = "workspace 2"
 alt-3 = "workspace 3"
 alt-4 = "workspace 4"
+alt-sectionSign = "workspace 5"
 alt-shift-1 = ["layout floating", "move-node-to-workspace 1"]
 alt-shift-2 = ["layout tiling", "move-node-to-workspace 2"]
 alt-shift-3 = ["layout tiling", "move-node-to-workspace 3"]
 alt-shift-4 = ["layout tiling", "move-node-to-workspace 4"]
+alt-shift-sectionSign = ["layout tiling", "move-node-to-workspace 5"]
 alt-h = "focus left"
 alt-j = "focus down"
 alt-k = "focus up"
