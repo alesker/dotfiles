@@ -35,3 +35,6 @@
     plus-non-emph-style           = syntax "#A5C5A7"
     plus-emph-style               = syntax "#84AF86"
     plus-empty-line-marker-style  = normal "#A5C5A7"
+
+[include]
+    path = ~/.gitconfig-custom

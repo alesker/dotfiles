@@ -83,9 +83,10 @@ Bundle other brewfiles depending on the machine (personal, work, etc.)
 stow aerospace bat ghostty git htop lazygit nvim tuicr yazi zsh
 ```
 
-## Plug any local zsh config to the main .zshrc
+## Plug any local zsh and git configs to the main .zshrc
 ```
 ln -s "$(pwd)/<local_zshrc_file>" ~/.custom-zshrc
+ln -s "$(pwd)/<local_gitconfig_file>" ~/.gitconfig-custom
 ```
 
 ## Scripts
