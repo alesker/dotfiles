@@ -3,5 +3,3 @@
 *.swo
 
 *.Brewfile.lock.json
-
-nvim/.config/nvim/lua/plugins/local/
