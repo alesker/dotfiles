@@ -1,6 +1,10 @@
 config-version = 2
 start-at-login = true
-after-startup-command = []
+after-startup-command = [
+  "layout --workspace 2 --root h_tiles",
+  "layout --workspace 3 --root h_accordion",
+  "layout --workspace 4 --root h_accordion",
+]
 default-root-container-layout = "tiles"
 default-root-container-orientation = "auto"
 accordion-padding = 32
@@ -11,9 +15,9 @@ on-focused-monitor-changed = ["move-mouse monitor-lazy-center"]
 on-mode-changed = []
 persistent-workspaces = [
   "1",  # regular macOS "everything floats" workspace
-  "2",  # focused-work workspace for coding
-  "3",  # focused-work workspace for browsing
-  "4",  # comms and media workspace
+  "2",  # focused-work workspace for code and terminal
+  "3",  # focused-work workspace for research and comms
+  "4",  # media workspace
 ]
 
 [workspace-to-monitor-force-assignment]
@@ -77,12 +81,24 @@ if.workspace = "1"
 check-further-callbacks = true
 run = "layout floating"
 
-# These apps use macOS native tabs, which are represented as separate windows in the macOS API, so tiling gets confused
+[[on-window-detected]]
+if = "test %{app-bundle-id} = com.apple.systempreferences || test %{app-bundle-id} = com.apple.finder || test %{app-bundle-id} = com.culturedcode.ThingsMac || test %{app-bundle-id} = ru.keepcoder.Telegram"
+run = ["layout floating"]
 
 [[on-window-detected]]
-if.app-id = "com.mitchellh.ghostty"
-run = ["layout floating", "fullscreen"]
+if = "test %{app-bundle-id} = com.readdle.SparkDesktop.appstore"
+run = ["move-node-to-workspace 3"]
 
 [[on-window-detected]]
-if.app-id = "com.DanPristupov.Fork"
-run = ["layout floating", "fullscreen"]
+if = "test %{app-bundle-id} = com.spotify.client"
+run = ["move-node-to-workspace 4"]
+
+# Float and expand these apps as they use macOS native tabs, which are represented as separate windows in the macOS API, which confuses tiling
+
+[[on-window-detected]]
+if = "test %{app-bundle-id} = com.mitchellh.ghostty"
+run = ["layout floating", "fullscreen", "move-node-to-workspace 2"]
+
+[[on-window-detected]]
+if = "test %{app-bundle-id} = com.DanPristupov.Fork"
+run = ["layout floating", "fullscreen", "move-node-to-workspace 2"]
