@@ -76,29 +76,58 @@ j = "join-with down"
 k = "join-with up"
 l = "join-with right"
 
+# Float windows on the first workspace
 [[on-window-detected]]
 if.workspace = "1"
 check-further-callbacks = true
 run = "layout floating"
 
+# Float these windows everywhere
 [[on-window-detected]]
-if = "test %{app-bundle-id} = com.apple.systempreferences || test %{app-bundle-id} = com.apple.finder || test %{app-bundle-id} = com.culturedcode.ThingsMac || test %{app-bundle-id} = ru.keepcoder.Telegram"
+if = """
+test %{app-bundle-id} = com.apple.systempreferences || \
+test %{app-bundle-id} = com.apple.finder || \
+test %{app-bundle-id} = com.culturedcode.ThingsMac || \
+test %{app-bundle-id} = com.1password.1password
+"""
 run = ["layout floating"]
 
+# Pin these apps to workspace 1
 [[on-window-detected]]
-if = "test %{app-bundle-id} = com.readdle.SparkDesktop.appstore"
+if = """
+test %{app-bundle-id} = com.apple.iCal || \
+test %{app-bundle-id} = ru.keepcoder.Telegram
+"""
+run = ["move-node-to-workspace 1"]
+
+# Pin these apps to workspace 2
+[[on-window-detected]]
+if = """
+test %{app-bundle-id} = com.mitchellh.ghostty || \
+test %{app-bundle-id} = com.DanPristupov.Fork
+"""
+run = ["move-node-to-workspace 2"]
+
+# Pin these apps to workspace 3
+[[on-window-detected]]
+if = """
+test %{app-bundle-id} = com.readdle.SparkDesktop.appstore || \
+test %{app-bundle-id} = com.tinyspeck.slackmacgap || \
+test %{app-bundle-id} = com.microsoft.Outlook
+"""
 run = ["move-node-to-workspace 3"]
 
+# Pin these apps to workspace 4
 [[on-window-detected]]
-if = "test %{app-bundle-id} = com.spotify.client"
+if = """
+test %{app-bundle-id} = com.spotify.client
+"""
 run = ["move-node-to-workspace 4"]
 
 # Float and expand these apps as they use macOS native tabs, which are represented as separate windows in the macOS API, which confuses tiling
-
 [[on-window-detected]]
-if = "test %{app-bundle-id} = com.mitchellh.ghostty"
-run = ["layout floating", "fullscreen", "move-node-to-workspace 2"]
-
-[[on-window-detected]]
-if = "test %{app-bundle-id} = com.DanPristupov.Fork"
-run = ["layout floating", "fullscreen", "move-node-to-workspace 2"]
+if = """
+test %{app-bundle-id} = com.mitchellh.ghostty || \
+test %{app-bundle-id} = com.DanPristupov.Fork
+"""
+run = ["layout floating", "fullscreen"]
