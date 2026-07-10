@@ -1,0 +1,52 @@
+#!/bin/bash
+
+set -euo pipefail
+
+direction="${1:-next}"
+
+case "$direction" in
+next | prev)
+  ;;
+*)
+  exit 2
+  ;;
+esac
+
+workspace="$(aerospace list-workspaces --focused)"
+
+if [ "$workspace" != "1" ]; then
+  if [ "$direction" = "next" ]; then
+    aerospace focus dfs-next --boundaries workspace --boundaries-action wrap-around-the-workspace
+  else
+    aerospace focus dfs-prev --boundaries workspace --boundaries-action wrap-around-the-workspace
+  fi
+else
+  current="$(aerospace list-windows --focused --format '%{window-id}' 2>/dev/null || true)"
+
+  ids=()
+  while IFS= read -r id; do
+    [ -n "$id" ] && ids+=("$id")
+  done < <(aerospace list-windows --workspace focused --format '%{window-id}')
+
+  count="${#ids[@]}"
+  [ "$count" -eq 0 ] && exit 0
+
+  if [ "$direction" = "next" ]; then
+    target="${ids[0]}"
+  else
+    target="${ids[$((count - 1))]}"
+  fi
+
+  for i in "${!ids[@]}"; do
+    if [ "${ids[$i]}" = "$current" ]; then
+      if [ "$direction" = "next" ]; then
+        target="${ids[$(((i + 1) % count))]}"
+      else
+        target="${ids[$(((i - 1 + count) % count))]}"
+      fi
+      break
+    fi
+  done
+
+  aerospace focus --window-id "$target"
+fi
