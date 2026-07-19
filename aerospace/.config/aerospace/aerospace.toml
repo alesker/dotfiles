@@ -135,6 +135,8 @@ run = ["layout tiling", "move-node-to-workspace 3"]
 [[on-window-detected]]
 check-further-callbacks = true
 if = """
-test %{app-bundle-id} = com.spotify.client
+test %{app-bundle-id} = com.spotify.client || \
+test %{app-bundle-id} = tv.plex.desktop || \
+test %{app-bundle-id} = com.apple.Safari.WebApp.F1D0433C-8A6C-430A-A7AD-DEB3933CEE91
 """
 run = ["layout tiling", "move-node-to-workspace 4"]
