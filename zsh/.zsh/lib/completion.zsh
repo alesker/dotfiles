@@ -17,3 +17,5 @@ HISTORY_SUBSTRING_SEARCH_PREFIXED=1
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+setopt GLOB_DOTS
