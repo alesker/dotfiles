@@ -7,10 +7,16 @@ function yy() {
   rm -f -- "$tmp"
 }
 
-#fzf wrapper that opens the selection either in vim or yazi
-function fzo() {
+function fzf() {
+  export FZF_DEFAULT_OPTS_FILE="$HOME/.config/fzf/fzfrc"
+
+  if (($# > 0)) || [[ ! -t 0 ]]; then
+    command fzf "$@"
+    return
+  fi
+
   local selected
-  selected=$(fzf "$@") || return
+  selected=$(command fzf --list-label="$PWD") || return
 
   if [[ -f "$selected" ]] && file --mime-type -b "$selected" | grep -q '^text/'; then
     vim "$selected"
@@ -21,8 +27,8 @@ function fzo() {
 
 # rg wrapper that pipes search matches to fzf and opens selection in vim
 function rgf() {
-  (( $# == 0 )) && set -- .
-  selected=$(rg --hidden --line-number --column --no-heading "$@" | fzf) || return
+  (($# == 0)) && set -- .
+  selected=$(rg --hidden --line-number --column --no-heading "$@" | fzf --list-label="$PWD") || return
 
   if [[ "$selected" =~ '^(.+):([0-9]+):([0-9]+):' ]]; then
     file="${match[1]}"

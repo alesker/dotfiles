@@ -94,7 +94,7 @@ Bundle other brewfiles depending on the machine (personal, work, etc.)
 ### Link configs with GNU Stow
 
 ```
-stow aerospace bat ghostty git htop lazygit nvim tuicr yazi zsh
+stow aerospace bat fzf ghostty git htop lazygit nvim tuicr yazi zsh
 ```
 
 ### Plug any local zsh and git configs to the main .zshrc

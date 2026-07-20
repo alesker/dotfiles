@@ -1,7 +1,8 @@
---theme="auto"
+--theme="auto:system"
 --theme-dark="gruvbox-dark"
 --theme-light="gruvbox-light"
 
 --wrap="never"
+--style="default"
 
 --italic-text="always"

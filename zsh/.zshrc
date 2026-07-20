@@ -45,4 +45,3 @@ eval "$(starship init zsh)"
 if type fastfetch &>/dev/null && [[ -z "$NVIM" ]]; then
   fastfetch
 fi
-
