@@ -21,6 +21,7 @@ function fzo() {
 
 # rg wrapper that pipes search matches to fzf and opens selection in vim
 function rgf() {
+  (( $# == 0 )) && set -- .
   selected=$(rg --hidden --line-number --column --no-heading "$@" | fzf) || return
 
   if [[ "$selected" =~ '^(.+):([0-9]+):([0-9]+):' ]]; then
