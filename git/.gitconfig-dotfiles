@@ -1,7 +1,3 @@
-[user]
-    name = Ilya Alesker
-    email = ilya.alesker@gmail.com
-
 [core]
     pager = delta --syntax-theme=gruvbox-$(system-appearance) --features=diff-theme-$(system-appearance) --side-by-side --line-numbers
 

@@ -20,7 +20,7 @@ Personal macOS configuration files, package manifests, and setup scripts, manage
 #### Generating a new SSH key
 1. Create a new SSH key, using email as a label
     ```
-    ssh-keygen -t ed25519 -C "ilya.alesker@gmail.com"
+    read -r "comment?Email for SSH key comment: " && ssh-keygen -t ed25519 -C "$comment"
     ```
 
 #### Adding the SSH key to the ssh-agent
@@ -65,7 +65,7 @@ Personal macOS configuration files, package manifests, and setup scripts, manage
 mkdir Developer; cd Developer
 ```
 ```
-git clone git@github.com:alesker/dotfiles.git; cd dotfiles
+git clone --recurse-submodules git@github.com:alesker/dotfiles.git; cd dotfiles
 ```
 
 ### Install stuff with [Homebrew](https://brew.sh)
@@ -91,17 +91,37 @@ Bundle other brewfiles depending on the machine (personal, work, etc.)
 
 > :shipit: Don't forget to run `brew caveats` for every brewfile and follow instructions when necessary
 
-### Link configs with GNU Stow
+### Set up configurations 
+
+#### Link configs packages with GNU Stow
 
 ```
 stow aerospace bat fzf ghostty git htop lazygit nvim tuicr yazi zsh
 ```
 
-### Plug any local zsh and git configs to the main .zshrc
+#### Add .gitconfig linked with .gitconfig-dotfiles
+
+```
+read -r "name?Name: " && \
+read -r "email?Email: " && \
+git config --global user.name "$name" && \
+git config --global user.email "$email" && \
+git config --global include.path '~/.gitconfig-dotfiles'
+```
+
+#### Plug any local zsh to the main .zshrc
+
 ```
 ln -s "$(pwd)/<local_zshrc_file>" ~/.custom-zshrc
-ln -s "$(pwd)/<local_gitconfig_file>" ~/.gitconfig-custom
 ```
+
+#### Add organization-specific git configs
+
+```
+read -r "organization?Organization: " && \
+git config --global "includeIf.gitdir:~/Developer/$organization/.path" "~/.gitconfig-$organization"
+```
+
 
 ### Scripts
 
