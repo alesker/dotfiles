@@ -1,0 +1,1 @@
+export OPENCODE_CONFIG_CONTENT='{"mcp":{"linear":{"enabled":false}}}'
