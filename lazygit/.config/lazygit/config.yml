@@ -10,7 +10,6 @@ gui:
   expandFocusedSidePanel: false
   wrapLinesInStagingView: true
   useHunkModeInStagingView: true
-
 git:
   autoFetch: false
   fetchAll: false
@@ -19,19 +18,16 @@ git:
   commit:
     autoWrapCommitMessage: true
     autoWrapWidth: 70
-  pagers:
-    - pager: >-
+  diffRenderers:
+    - command: >-
         delta \
           --syntax-theme=gruvbox-$(system-appearance) \
           --features=diff-theme-$(system-appearance) \
           --paging=never \
           --hyperlinks \
           --hyperlinks-file-link-format="lazygit-edit://{path}:{line}"
-
-    - pager: ""
-
+    - type: rawGit
 disableStartupPopups: true
-
 keybinding:
   universal:
     pushFiles: <disabled>
