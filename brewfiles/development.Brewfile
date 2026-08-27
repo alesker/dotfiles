@@ -8,6 +8,7 @@ brew "hay-kot/scaffold-tap/scaffold"
 
 brew "gh"
 brew "lazygit"
+brew "treehouse"
 brew "agavra/tap/tuicr"
 
 brew "ansible"
