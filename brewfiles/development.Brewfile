@@ -4,6 +4,8 @@ tap "hay-kot/scaffold-tap"
 
 brew "hurl"
 
+brew "hay-kot/scaffold-tap/scaffold"
+
 brew "gh"
 brew "lazygit"
 brew "agavra/tap/tuicr"
@@ -25,4 +27,3 @@ brew "go-blueprint"
 cask "fork"
 cask "linear"
 cask "alesker/tap/opencode"
-cask "hay-kot/scaffold-tap/scaffold"

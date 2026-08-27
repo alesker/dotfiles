@@ -1,4 +1,7 @@
+brew "termscp"
+
 brew "node"
+brew "pnpm"
 brew "azure-cli"
 brew "python"
 
