@@ -1,5 +1,4 @@
 tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git"
-tap "agavra/tap"
 tap "hay-kot/scaffold-tap"
 
 brew "hurl"
@@ -9,7 +8,7 @@ brew "hay-kot/scaffold-tap/scaffold"
 brew "gh"
 brew "lazygit"
 brew "treehouse"
-brew "agavra/tap/tuicr"
+brew "tuicr"
 
 brew "ansible"
 brew "colima"

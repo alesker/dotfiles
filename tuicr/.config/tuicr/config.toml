@@ -4,6 +4,11 @@ theme_light = "gruvbox-light"
 
 show_file_list = true
 wrap = false
+comment_tab_width = 4
+cursor_line = true
+search_highlight = true
+no_update_check = true
+single_file_view = true
 
 comment_types = [
   { id = "fix", definition = "make this requested change", color = "red" },
@@ -11,3 +16,7 @@ comment_types = [
   { id = "question", definition = "answer this question before deciding what, if anything, should change", color = "blue" },
   { id = "praise", definition = "positive feedback worth preserving", color = "green" },
 ]
+
+[export]
+intro = "The code has been reviewed and here are the comments. Please address them."
+legend = true
