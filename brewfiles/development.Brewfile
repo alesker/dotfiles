@@ -1,5 +1,5 @@
-tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git"
-tap "hay-kot/scaffold-tap"
+tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git", trusted: true
+tap "hay-kot/scaffold-tap", trusted: true
 
 brew "hurl"
 

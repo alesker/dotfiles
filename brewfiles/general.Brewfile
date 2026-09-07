@@ -1,6 +1,6 @@
 # Taps
-tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git"
-tap "nikitabobko/tap"
+tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git", trusted: true
+tap "nikitabobko/tap", trusted: true
 
 # Shell and environment
 brew "antidote"
