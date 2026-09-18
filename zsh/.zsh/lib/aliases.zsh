@@ -30,6 +30,11 @@ alias df='df -H'
 alias du='du -c -h'
 alias bc='bc -lqw'
 
+alias th='treehouse'
+alias ths='th status'
+alias thg='th get'
+alias the='th enter'
+
 alias lazygit='lazygit --use-config-file "$HOME/.config/lazygit/config.yml"'
 
 alias lzg='lazygit'
