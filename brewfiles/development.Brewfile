@@ -1,9 +1,11 @@
-tap "alesker/tap", "git@github.com:alesker/homebrew-tap.git", trusted: true
+tap "anomalyco/tap", trusted: true
 tap "hay-kot/scaffold-tap", trusted: true
 
 brew "hurl"
 
 brew "hay-kot/scaffold-tap/scaffold"
+
+brew "anomalyco/tap/opencode-v2"
 
 brew "gh"
 brew "lazygit"
@@ -26,4 +28,3 @@ brew "go-blueprint"
 
 cask "fork"
 cask "linear"
-cask "alesker/tap/opencode"

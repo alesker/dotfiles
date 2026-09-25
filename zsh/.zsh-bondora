@@ -1,1 +1,20 @@
-export OPENCODE_CONFIG_CONTENT='{"mcp":{"linear":{"enabled":false}}}'
+export OPENCODE_CONFIG_CONTENT='{
+  "mcp": {
+    "servers": {
+      "linear": {
+        "disabled": true
+      },
+      "atlassian": {
+        "type": "remote",
+        "url": "https://mcp.atlassian.com/v2/mcp",
+        "disabled": false
+      }
+    }
+  }
+}'
+
+export OPENCODE_CLI_CONFIG_CONTENT='{
+  "session":{
+    "permissions":"autoaccept"
+  }
+}'
