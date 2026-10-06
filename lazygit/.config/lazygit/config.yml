@@ -8,8 +8,10 @@ gui:
   splitDiff: auto
   mainPanelSplitMode: vertical
   expandFocusedSidePanel: false
-  wrapLinesInStagingView: true
-  useHunkModeInStagingView: true
+  wrapLinesInDiffView: true
+  useHunkModeInDiffView: true
+  theme:
+    selectedLineBgColor: [blue]
 git:
   autoFetch: false
   fetchAll: false
