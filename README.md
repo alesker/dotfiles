@@ -96,7 +96,7 @@ Bundle other brewfiles depending on the machine (personal, work, etc.)
 #### Link configs packages with GNU Stow
 
 ```
-stow aerospace bat fzf ghostty gir htop lazygit nvim treehouse tuicr yazi zsh
+stow aerospace bat fzf ghostty gir htop karabiner lazygit nvim treehouse tuicr yazi zsh
 ```
 
 #### Add .gitconfig linked with .gitconfig-dotfiles

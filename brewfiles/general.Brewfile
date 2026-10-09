@@ -42,7 +42,7 @@ cask "deckset"
 cask "fliqlo"
 cask "ghostty"
 cask "grammarly-desktop"
-cask "alesker/tap/neovimapp"
+cask "karabiner-elements"
 cask "obsidian"
 cask "qlmarkdown"
 cask "rocket"
@@ -70,7 +70,6 @@ mas "iMovie", id: 408981434
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Paper", id: 1143513744
 mas "Parcel", id: 375589283
 mas "Spark Desktop", id: 6445813049
 mas "Telegram", id: 747648890
