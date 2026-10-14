@@ -3,8 +3,6 @@ tap "hay-kot/scaffold-tap", trusted: true
 
 brew "hurl"
 
-brew "hay-kot/scaffold-tap/scaffold"
-
 brew "anomalyco/tap/opencode-v2"
 
 brew "gh"
@@ -28,3 +26,4 @@ brew "go-blueprint"
 
 cask "fork"
 cask "linear"
+cask "hay-kot/scaffold-tap/scaffold"
