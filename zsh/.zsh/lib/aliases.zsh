@@ -7,12 +7,6 @@ alias -g ......='../../../../..'
 alias md='mkdir -p'
 alias rd=rmdir
 
-alias l='ls -lah'
-alias la='ls -lAh'
-alias ll='ls -lh'
-alias ls='ls -G'
-alias lsa='ls -lah'
-
 alias eza='eza --group-directories-first'
 alias ls='eza'
 alias ll='eza -lh'
@@ -39,3 +33,5 @@ alias lazygit='lazygit --use-config-file "$HOME/.config/lazygit/config.yml"'
 
 alias lzg='lazygit'
 alias lzd='lazydocker'
+
+alias opco='opencode'

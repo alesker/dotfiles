@@ -127,7 +127,8 @@ if = """
 (test %{app-bundle-id} = com.apple.Safari && test %{window-title} ~= "^🕳️ .* — ") || \
 test %{app-bundle-id} = com.readdle.SparkDesktop.appstore || \
 test %{app-bundle-id} = com.tinyspeck.slackmacgap || \
-test %{app-bundle-id} = com.microsoft.Outlook
+test %{app-bundle-id} = com.microsoft.Outlook || \
+test %{app-bundle-id} = com.microsoft.teams2
 """
 run = ["layout tiling", "move-node-to-workspace 3"]
 
