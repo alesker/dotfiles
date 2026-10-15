@@ -29,9 +29,6 @@ unset lib_file
 
 source <(fzf --zsh)
 
-source $(brew --prefix)/share/chruby/chruby.sh
-source $(brew --prefix)/share/chruby/auto.sh
-
 if [ -f ~/.custom-zshrc ]; then
   source ~/.custom-zshrc
 fi
@@ -41,6 +38,10 @@ eval "$(zoxide init zsh --cmd cd)"
 
 export STARSHIP_CONFIG=~/.config/starship-pills.toml
 eval "$(starship init zsh)"
+
+if type mise &>/dev/null; then
+  eval "$(mise activate zsh)"
+fi
 
 if type fastfetch &>/dev/null && [[ -z "$NVIM" ]]; then
   fastfetch

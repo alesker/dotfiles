@@ -1,0 +1,8 @@
+[tools]
+ruby = "4"
+
+[settings]
+idiomatic_version_file_enable_tools = ["ruby"]
+auto_install = false
+not_found_auto_install = false
+not_found_system_fallback = false

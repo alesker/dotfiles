@@ -16,9 +16,7 @@ brew "docker"
 brew "docker-buildx"
 brew "docker-compose"
 brew "lazydocker"
-
-brew "ruby-install"
-brew "chruby"
+brew "mise"
 
 brew "golang"
 brew "go-air"

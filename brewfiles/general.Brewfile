@@ -4,7 +4,6 @@ tap "nikitabobko/tap", trusted: true
 
 # Shell and environment
 brew "antidote"
-brew "python"
 brew "rg"
 brew "starship"
 brew "stow"
