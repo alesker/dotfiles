@@ -1,9 +1,7 @@
-// -- CONFIGURATION ---
+// --- CONFIGURATION ---
 const float BLUR = 1.0;
-
 const float DURATION = 0.15;
-
-vec4 TRAIL_COLOR = iCurrentCursorColor; 
+vec4 TRAIL_COLOR = vec4(iCurrentCursorColor.rgb, iCurrentCursorColor.a);
 const float TRAIL_LENGTH = 0.5;
 
 // --- CONSTANTS for easing functions ---

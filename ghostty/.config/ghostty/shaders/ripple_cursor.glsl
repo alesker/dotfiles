@@ -1,17 +1,12 @@
 // CONFIGURATION
+const float DURATION = 0.15;
+const float MAX_RADIUS = 0.025;
+const float RING_THICKNESS = 0.02;
+const float CURSOR_WIDTH_CHANGE_THRESHOLD = 0.5; 
+vec4 COLOR = vec4(iCurrentCursorColor[0], iCurrentCursorColor[1], iCurrentCursorColor[2], 0.8);
+const float BLUR = 3.5;
 const float ANIMATION_START_OFFSET = 0.01;
 
-const float BLUR = 3.5;
-
-vec4 COLOR = vec4(iCurrentCursorColor[0], iCurrentCursorColor[1], iCurrentCursorColor[2], 0.8);
-
-const float CURSOR_WIDTH_CHANGE_THRESHOLD = 0.5;
-
-const float DURATION = 0.15;
-
-const float MAX_RADIUS = 0.025;
-
-const float RING_THICKNESS = 0.02;
 
 // Easing functions
 float easeOutQuad(float t) {
